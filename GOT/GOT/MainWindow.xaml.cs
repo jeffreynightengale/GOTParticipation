@@ -34,7 +34,7 @@ namespace GOT
             using (var client = new HttpClient())
             {
                 string url = "https://got-quotes.herokuapp.com/quotes";
-                string jsonData = client.GetStringAsync(url).Result;
+                string jsonData = client.GetStringAsync(url).Result; // GetASync gives back the whole thing whereas GetStringAsync gives back string
                 GOTApi api = JsonConvert.DeserializeObject<GOTApi>(jsonData);
 
                 CharacterLbl.Content = api.character;
